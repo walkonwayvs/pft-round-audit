@@ -91,6 +91,23 @@ that round's actual public artifacts so you can reproduce the receipt offline:
 python3 pft_round_audit.py --round 12 --from-dir ./fixtures
 ```
 
+## Tests — proving the checks actually bite
+
+A verifier is only trustworthy if it fails when it should. The `tests/` directory
+contains deliberately-broken copies of a round — each one breaks exactly one rule
+(churn violation, eligibility breach, wrong UNL size, out-of-range score, missing
+artifact, duplicate entry, signing-key mismatch) — plus a runner that confirms the
+auditor catches each one:
+
+```bash
+python3 tests/run_tests.py
+```
+
+It runs the auditor against the clean fixtures (expected **CONSISTENT**) and against
+every broken fixture (expected **INCONSISTENT**, with the specific check that must
+fail), and exits non-zero if any case doesn't behave as expected. This makes the
+verifier's own correctness reproducible by anyone.
+
 ## Requirements
 
 Python 3.8+. Standard library only — no dependencies.
