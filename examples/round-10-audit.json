@@ -1,13 +1,13 @@
 {
   "tool": "pft-round-audit",
   "tool_version": "1.0",
-  "round": 12,
-  "generated_utc": "2026-07-04T22:33:11Z",
+  "round": 10,
+  "generated_utc": "2026-07-04T22:33:09Z",
   "artifact_sha256": {
-    "scores": "b5cb646601baadf0e0f3d4ee3a026b9e3f57d3261b2ab9085291d6afc7fd8206",
-    "unl": "40780f8e601df217bdffd7ffd73bd285afe5cfa05535009614201e8967953eec",
-    "evidence": "bf9a9c9a0e21ccf72e4e0f58a47f85dfb29ffb4842ca8fd1f97bbf63cbe9f613",
-    "map": "06c6f797dfe949dc10ea473e31d37e0f59902af513c843192bd10e3fb14c4405"
+    "scores": "8612ef7a3106038be3a26f610d549d9bbb4b4c773d5b7a37b2b8e6b0b90bc35e",
+    "unl": "ed46c4b18a461aab7f6ca74a95ede3efce79166086a020d9da4d7a46ddd2eada",
+    "evidence": "29223a4ea6f7d524224669891d853914f7c5fee0ae50b32af0325e2446a29fc2",
+    "map": "dbf81b0953426aa317a0c48c5a5e3b5a48a8d1ca94f64b33cb7b99a6c318a5a9"
   },
   "verdict": "CONSISTENT",
   "checks": [
@@ -19,12 +19,12 @@
     {
       "id": "C2_round_number",
       "status": "PASS",
-      "detail": "evidence round_number == 12"
+      "detail": "evidence round_number == 10"
     },
     {
       "id": "C3_map_covers_scores",
       "status": "PASS",
-      "detail": "scores and map cover identical 45 validators"
+      "detail": "scores and map cover identical 49 validators"
     },
     {
       "id": "C4_unl_in_scores",
@@ -44,7 +44,7 @@
     {
       "id": "C5c_churn_gap",
       "status": "PASS",
-      "detail": "no excluded validator beats the weakest UNL member (score 87) by the churn gap of 5; selection consistent with anti-churn rule"
+      "detail": "no excluded validator beats the weakest UNL member (score 86) by the churn gap of 5; selection consistent with anti-churn rule"
     },
     {
       "id": "C6_no_duplicates",

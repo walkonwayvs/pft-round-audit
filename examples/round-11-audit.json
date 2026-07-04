@@ -1,13 +1,13 @@
 {
   "tool": "pft-round-audit",
   "tool_version": "1.0",
-  "round": 12,
-  "generated_utc": "2026-07-04T22:33:11Z",
+  "round": 11,
+  "generated_utc": "2026-07-04T22:33:10Z",
   "artifact_sha256": {
-    "scores": "b5cb646601baadf0e0f3d4ee3a026b9e3f57d3261b2ab9085291d6afc7fd8206",
-    "unl": "40780f8e601df217bdffd7ffd73bd285afe5cfa05535009614201e8967953eec",
-    "evidence": "bf9a9c9a0e21ccf72e4e0f58a47f85dfb29ffb4842ca8fd1f97bbf63cbe9f613",
-    "map": "06c6f797dfe949dc10ea473e31d37e0f59902af513c843192bd10e3fb14c4405"
+    "scores": "61fc1d878defb28d0ab25008e3a0a9c2e080fc314f42fea6ed36a5342d9af9e7",
+    "unl": "71b1cd87773dd58b9b8789d1be0383de76978fc7fa68168cdba8993b8deb2594",
+    "evidence": "2a800903ab3447a99333c95350551fededdf0bdb5dc1f14a372771ae87af05f1",
+    "map": "c45ad96399e8ae30f72a27bf0eaeed76f18ce362f1bbc4007335512837b05663"
   },
   "verdict": "CONSISTENT",
   "checks": [
@@ -19,12 +19,12 @@
     {
       "id": "C2_round_number",
       "status": "PASS",
-      "detail": "evidence round_number == 12"
+      "detail": "evidence round_number == 11"
     },
     {
       "id": "C3_map_covers_scores",
       "status": "PASS",
-      "detail": "scores and map cover identical 45 validators"
+      "detail": "scores and map cover identical 44 validators"
     },
     {
       "id": "C4_unl_in_scores",
@@ -44,7 +44,7 @@
     {
       "id": "C5c_churn_gap",
       "status": "PASS",
-      "detail": "no excluded validator beats the weakest UNL member (score 87) by the churn gap of 5; selection consistent with anti-churn rule"
+      "detail": "no excluded validator beats the weakest UNL member (score 85) by the churn gap of 5; selection consistent with anti-churn rule"
     },
     {
       "id": "C6_no_duplicates",
@@ -64,7 +64,7 @@
     {
       "id": "C9_alternates_valid",
       "status": "PASS",
-      "detail": "all 23 alternates scored and within the churn gap of the UNL cut"
+      "detail": "all 21 alternates scored and within the churn gap of the UNL cut"
     }
   ],
   "note": "Independent consistency audit from public artifacts only. Proves completeness and internal consistency; does not re-run scoring or assert score correctness."
