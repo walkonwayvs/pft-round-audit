@@ -1,0 +1,71 @@
+{
+  "tool": "pft-round-audit",
+  "tool_version": "1.0",
+  "round": 12,
+  "generated_utc": "2026-07-04T22:25:16Z",
+  "artifact_sha256": {
+    "scores": "b5cb646601baadf0e0f3d4ee3a026b9e3f57d3261b2ab9085291d6afc7fd8206",
+    "unl": "40780f8e601df217bdffd7ffd73bd285afe5cfa05535009614201e8967953eec",
+    "evidence": "9eb906a5dadefd46f36da813a6b3a02ebb718f4b4e077e5ec0d1a081aaeef5cc",
+    "map": "06c6f797dfe949dc10ea473e31d37e0f59902af513c843192bd10e3fb14c4405"
+  },
+  "verdict": "CONSISTENT",
+  "checks": [
+    {
+      "id": "C1_artifacts_present",
+      "status": "PASS",
+      "detail": "all four artifacts present and valid JSON"
+    },
+    {
+      "id": "C2_round_number",
+      "status": "PASS",
+      "detail": "evidence round_number == 12"
+    },
+    {
+      "id": "C3_map_covers_scores",
+      "status": "PASS",
+      "detail": "scores and map cover identical 45 validators"
+    },
+    {
+      "id": "C4_unl_in_scores",
+      "status": "PASS",
+      "detail": "all 20 UNL members present in scores"
+    },
+    {
+      "id": "C5a_unl_size",
+      "status": "PASS",
+      "detail": "UNL size == 20"
+    },
+    {
+      "id": "C5b_eligibility",
+      "status": "PASS",
+      "detail": "all UNL members score >= 40 (eligibility cutoff)"
+    },
+    {
+      "id": "C5c_churn_gap",
+      "status": "PASS",
+      "detail": "no excluded validator beats the weakest UNL member (score 87) by the churn gap of 5; selection consistent with anti-churn rule"
+    },
+    {
+      "id": "C6_no_duplicates",
+      "status": "PASS",
+      "detail": "no duplicate score entries; UNL and alternates disjoint"
+    },
+    {
+      "id": "C7_component_bounds",
+      "status": "PASS",
+      "detail": "all scores and components within [0,100]"
+    },
+    {
+      "id": "C8_evidence_keys_match",
+      "status": "PASS",
+      "detail": "signing keys agree between evidence and map for all shared validators"
+    },
+    {
+      "id": "C9_alternates_valid",
+      "status": "PASS",
+      "detail": "all 23 alternates scored and within the churn gap of the UNL cut"
+    }
+  ],
+  "note": "Independent consistency audit from public artifacts only. Proves completeness and internal consistency; does not re-run scoring or assert score correctness."
+}
