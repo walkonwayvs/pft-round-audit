@@ -1,14 +1,23 @@
 # pft-round-audit
 
+> **Status: superseded — archived for reference.**
+> Post Fiat's own tooling independently verifies published scoring rounds: the
+> [`validator-scoring-sidecar`](https://github.com/postfiatorg/validator-scoring-sidecar)
+> re-runs the round and compares hashes, and the
+> [Bundle Verification Guide](https://github.com/postfiatorg/dynamic-unl-scoring/blob/main/docs/phase2/BundleVerificationGuide.md)
+> documents the canonical verification procedure. This tool checks a narrower,
+> selection-rule layer from public data and does **not** re-run the model. It is
+> kept public as a reference artifact.
+
 An independent, reproducible audit of a published [Post Fiat](https://postfiat.org)
 validator-scoring round — built **only** from that round's public artifacts.
 
 Every week Post Fiat selects its validator list (the UNL) and publishes the
 evidence behind the decision: the scores, the inputs, and the resulting list.
 The network's whole premise is that this selection is *auditable* rather than
-opaque. But publishing evidence and having someone independently *check* it are
-two different things. Until now, nobody has independently verified that each
-round's published evidence is complete and internally consistent.
+opaque. This tool checks one slice of that from public data: that a published
+round's artifacts are mutually consistent and that the selection obeys the
+documented public rules.
 
 `pft-round-audit` is that check. Point it at a round, and it fetches the public
 artifacts, verifies they agree with each other, and produces a deterministic
@@ -27,9 +36,9 @@ it obeys Post Fiat's published selection rules**:
 
 **It does not** re-run the LLM scoring pipeline or claim the individual scores are
 "correct." Reproducing the scoring model from frozen inputs is the network's own,
-heavier verification method. This tool verifies the *published rules were followed*
-and the *artifacts are mutually consistent* — the layer that is checkable directly
-from public data and currently has no independent check.
+heavier verification method — implemented by the `validator-scoring-sidecar`. This
+tool verifies the *published rules were followed* and the *artifacts are mutually
+consistent*, directly from public data.
 
 Because every finding is derived only from the public files, **anyone can re-run
 this tool on the same round and get the same receipt.** That reproducibility is
